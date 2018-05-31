@@ -30,11 +30,12 @@ document.addEventListener('DOMContentLoaded', function(){
 
 		this.id = randomString();
 		this.name = name;
-		this.element = generateTemplate('column-template', { name: this.name });
+		this.element = generateTemplate('column-template', { name: this.name, id: this.id });
 
 		//PODPINANIE ZDARZEŃ
 
 		this.element.querySelector('.column').addEventListener('click', function (event) {
+			console.log(event.target)
 			if (event.target.classList.contains('btn-delete')) {
 			  self.removeColumn();
 			}
@@ -70,13 +71,13 @@ document.addEventListener('DOMContentLoaded', function(){
 				self.removeCard();
 			}
 		});
-		Card.prototype = {
+		
+	}
+	Card.prototype = {
 			removeCard: function() {
 				this.element.parentNode.removeChild(this.element);
 		    }
 		}
-	}
-
 	// OBIEKT TABLICY
 
 	var board = {
@@ -97,6 +98,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	document.querySelector('#board .create-column').addEventListener('click', function() {
 		var name = prompt('Enter a column name');
+		if (!name){
+			alert('Wpisz nazwę!')
+			return
+		} // W przypadku przycisku anuluj - wyskakuje komunikat
 		var column = new Column(name);
 		board.addColumn(column);
 	});
