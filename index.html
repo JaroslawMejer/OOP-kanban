@@ -4,13 +4,15 @@
 
     <meta charset="utf-8">
     <title>Kanban board</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
   </head>
   <body>
   	<div id="board" class="board">
 
-      <h1>Kanban board</h1>
+      <h1><span>Kanban board</span></h1>
       <button class="create-column">Add a column</button>
       <div class="column-container"></div>
 
@@ -19,7 +21,7 @@
 
     <script id="column-template" type="x-tmpl-mustache">
       <div class="column">
-        <h2 class="column-title">{{ name }}</h2>
+        <h2 class="column-title"><span>{{ name }}</span></h2>
         <ul id={{ id }} class="column-card-list"></ul>
         <button class="btn-delete">X</button>
         <button class="add-card">Add a card</button>

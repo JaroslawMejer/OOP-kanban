@@ -1,6 +1,10 @@
 body{
 	margin: 0;
 	padding: 0;
+	background-image: url('https://public.adobecc.com/files/1E4QQCKQVENAJXZZYGXJPTH3S0HEFF');
+	background-position: center;
+	background-size: 100%;
+	font-family: 'Amatic SC', cursive;
 }
 
 .board{
@@ -9,11 +13,31 @@ body{
 	margin: 0 auto;
 	h1{
 		text-align: center;
+		font-weight: bold;
+		font-size: 5em;
+		span{
+			padding: 10px 20px;
+			background-color: rgba(1,1,1,0.3);
+			border-radius: 15px;
+		}
 	}
 	.create-column{
 		width: 20%;
 		margin-left: 40%;
 		margin-right: 40%;
+		background-color: rgb(255, 210, 86);
+		border-radius: 15px;
+		font-family: 'Amatic SC', cursive;
+		font-weight: bold;
+		font-size: 1.5em;
+		border: none;
+		transition: all 1s;
+		cursor: url(../images/pin.png), auto;
+		border: 1px solid transparent;
+		&:hover{
+			transform: scale(1.1);
+			border: 1px solid black;
+		}
 	}
 	.column-container{
 		display: flex;
@@ -21,6 +45,13 @@ body{
 		.column{
 			h2{
 				text-align: center;
+				font-size: 2.5em;
+				font-weight: bold;
+				span{
+					padding: 10px 20px;
+					background-color: rgba(1,1,1,0.3);
+					border-radius: 15px;
+				}
 			}
 			.column-card-list{
 				min-height: 100px;

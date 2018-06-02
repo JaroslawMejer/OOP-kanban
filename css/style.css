@@ -1,6 +1,10 @@
 body {
   margin: 0;
   padding: 0;
+  background-image: url("https://public.adobecc.com/files/1E4QQCKQVENAJXZZYGXJPTH3S0HEFF");
+  background-position: center;
+  background-size: 100%;
+  font-family: 'Amatic SC', cursive;
 }
 
 .board {
@@ -11,12 +15,34 @@ body {
 
 .board h1 {
   text-align: center;
+  font-weight: bold;
+  font-size: 5em;
+}
+
+.board h1 span {
+  padding: 10px 20px;
+  background-color: rgba(1, 1, 1, 0.3);
+  border-radius: 15px;
 }
 
 .board .create-column {
   width: 20%;
   margin-left: 40%;
   margin-right: 40%;
+  background-color: #ffd256;
+  border-radius: 15px;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+  font-size: 1.5em;
+  border: none;
+  transition: all 1s;
+  cursor: url(../images/pin.png), auto;
+  border: 1px solid transparent;
+}
+
+.board .create-column:hover {
+  transform: scale(1.1);
+  border: 1px solid black;
 }
 
 .board .column-container {
@@ -28,6 +54,14 @@ body {
 
 .board .column-container .column h2 {
   text-align: center;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.board .column-container .column h2 span {
+  padding: 10px 20px;
+  background-color: rgba(1, 1, 1, 0.3);
+  border-radius: 15px;
 }
 
 .board .column-container .column .column-card-list {
