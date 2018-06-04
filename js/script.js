@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 		this.element.querySelector('.column').addEventListener('click', function (event) {
 			console.log(event.target)
-			if (event.target.classList.contains('btn-delete')) {
+			if (event.target.classList.contains('fa-trash-alt')) {
 			  self.removeColumn();
 			}
 
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		this.element.querySelector('.card').addEventListener('click', function (event) {
 			event.stopPropagation();
 
-			if (event.target.classList.contains('btn-delete')) {
+			if (event.target.classList.contains('fa-trash-alt')) {
 				self.removeCard();
 			}
 		});
@@ -96,15 +96,22 @@ document.addEventListener('DOMContentLoaded', function(){
 		});
 	}
 
-	document.querySelector('#board .create-column').addEventListener('click', function() {
-		var name = prompt('Enter a column name');
+	document.querySelector('#board .create-column').addEventListener('click', function(){
+		document.getElementById("overlay").style.display = "block";
+	});
+
+	document.querySelector('#overlay .submit-col-name').addEventListener('click', function(){
+		var inputEl = document.querySelector('.col-creating-container input')
+		var name = inputEl.value
 		if (!name){
 			alert('Wpisz nazwę!')
 			return
-		} // W przypadku przycisku anuluj - wyskakuje komunikat
-		var column = new Column(name);
+		}
+		var column = new Column(name)
 		board.addColumn(column);
+		document.getElementById("overlay").style.display = "none";
 	});
+
 
 	// CREATING COLUMNS
 	var todoColumn = new Column('To do');

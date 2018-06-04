@@ -6,6 +6,7 @@
     <title>Kanban board</title>
 
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
   </head>
@@ -18,20 +19,31 @@
 
   	</div>
 
+    <div id="overlay" style="display: none;">
+      <div class="col-creating-container">
+        <h1>Enter a column name</h1>
+        <input type="text" name="col-name" placeholder="Your new column name...">
+        <button class="submit-col-name">Confirm</button>
+      </div>
+    </div>
 
     <script id="column-template" type="x-tmpl-mustache">
       <div class="column">
         <h2 class="column-title"><span>{{ name }}</span></h2>
+        <div class="col-button-container">
+          <button class="btn-delete"><i class="fas fa-trash-alt"></i></button>
+          <button class="add-card">Add a card</button>
+        </div>
         <ul id={{ id }} class="column-card-list"></ul>
-        <button class="btn-delete">X</button>
-        <button class="add-card">Add a card</button>
+        
       </div>
     </script>
 
     <script id="card-template" type="x-tmpl-mustache">
       <div class="card">
-        <p class="card-description">{{ description }}</p>
-        <button class="btn-delete">x</button>
+        <a><i class="fas fa-thumbtack"></i></a>
+        <h3 class="card-description">{{ description }}</h3>
+        <button class="btn-delete"><i class="fas fa-trash-alt"></i></button>
       </div
     </script>
 
