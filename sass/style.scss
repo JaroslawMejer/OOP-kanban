@@ -1,7 +1,7 @@
 body{
 	margin: 0;
 	padding: 0;
-	background-image: url('https://public.adobecc.com/files/1E4QQCKQVENAJXZZYGXJPTH3S0HEFF');
+	background-image: url('https://public.adobecc.com/files/1ENSRQRKBWF5AK0JWQ2UE3RG3MFFFF');
 	background-size: 100%;
 	font-family: 'Amatic SC', cursive;
 }
@@ -48,6 +48,7 @@ $primary-color: white;
 	.column-container{
 		display: flex;
 		justify-content: space-around;
+		flex-wrap: wrap;
 		div{
 			width: 30%;
 			.column{
@@ -126,6 +127,11 @@ $primary-color: white;
 									cursor: grab;
 								}
 							}
+							p{
+								padding: 10px;
+								font-size: 1.4em;
+								font-weight: bold;
+							}
 							.btn-delete{
 								position: absolute;
 								bottom: 5px;
@@ -169,6 +175,7 @@ $primary-color: white;
 	    left: 50%;
 	    transform: translate(-50%,-50%);
 	    border-radius: 15px;
+	    transition: all 1s;
 	    h1{
 	    	font-size: 3em;
 	    }
@@ -195,6 +202,76 @@ $primary-color: white;
 				color: rgb(255, 210, 86);
 				cursor: pointer;
 			}
+	    }
+	    .exit-button{
+	    	position: absolute;
+	    	top: 15px;
+	    	right: 15px;
+	    	background-color: transparent;
+	    	border: none;
+	    	font-size: 1.5em;
+	    	transition: 0.5s;
+	    	&:hover{
+	    		color: white;
+	    		cursor: pointer;
+	    	}
+	    }
+	}
+	.card-creating-container{
+		background-color: rgb(255, 210, 86);
+		display: inline-block;
+		padding: 50px;
+		text-align: center;
+		position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%,-50%);
+	    border-radius: 15px;
+	    transition: all 1s;
+	    h1{
+	    	font-size: 3em;
+	    }
+	    input{
+	    	padding: 5px;
+	    	border: 1px solid black;
+	    	border-radius: 5px;
+	    }
+	    .submit-col-name, .submit-new-card{
+	    	display: block;
+	    	margin: 0 auto;
+	    	margin-top: 10px;
+	    	padding: 5px 15px;
+	    	font-family: 'Amatic SC', cursive;
+			font-weight: bold;
+			font-size: 1.5em;
+			border: none;
+			transition: 0.5s;
+			border: 1px solid transparent;
+			border-radius: 15px;
+			color: black;
+			background-color: white;
+			&:hover{
+				color: rgb(255, 210, 86);
+				cursor: pointer;
+			}
+	    }
+	    .exit-button{
+	    	position: absolute;
+	    	top: 15px;
+	    	right: 15px;
+	    	background-color: transparent;
+	    	border: none;
+	    	font-size: 1.5em;
+	    	transition: 0.5s;
+	    	&:hover{
+	    		color: white;
+	    		cursor: pointer;
+	    	}
+	    }
+	    textarea{
+	    	outline: none;
+	    	border: 1px solid black;
+	    	padding: 10px;
 	    }
 	}
 }

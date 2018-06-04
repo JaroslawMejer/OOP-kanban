@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("https://public.adobecc.com/files/1E4QQCKQVENAJXZZYGXJPTH3S0HEFF");
+  background-image: url("https://public.adobecc.com/files/1ENSRQRKBWF5AK0JWQ2UE3RG3MFFFF");
   background-size: 100%;
   font-family: 'Amatic SC', cursive;
 }
@@ -52,6 +52,8 @@ body {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .board .column-container div {
@@ -155,6 +157,12 @@ body {
   cursor: grab;
 }
 
+.board .column-container div .column .column-card-list li .card p {
+  padding: 10px;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
 .board .column-container div .column .column-card-list li .card .btn-delete {
   position: absolute;
   bottom: 5px;
@@ -193,6 +201,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 15px;
+  transition: all 1s;
 }
 
 #overlay .col-creating-container h1 {
@@ -224,5 +233,85 @@ body {
 #overlay .col-creating-container .submit-col-name:hover {
   color: #ffd256;
   cursor: pointer;
+}
+
+#overlay .col-creating-container .exit-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
+  transition: 0.5s;
+}
+
+#overlay .col-creating-container .exit-button:hover {
+  color: white;
+  cursor: pointer;
+}
+
+#overlay .card-creating-container {
+  background-color: #ffd256;
+  display: inline-block;
+  padding: 50px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  transition: all 1s;
+}
+
+#overlay .card-creating-container h1 {
+  font-size: 3em;
+}
+
+#overlay .card-creating-container input {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#overlay .card-creating-container .submit-col-name, #overlay .card-creating-container .submit-new-card {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 5px 15px;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+  font-size: 1.5em;
+  border: none;
+  transition: 0.5s;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  color: black;
+  background-color: white;
+}
+
+#overlay .card-creating-container .submit-col-name:hover, #overlay .card-creating-container .submit-new-card:hover {
+  color: #ffd256;
+  cursor: pointer;
+}
+
+#overlay .card-creating-container .exit-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
+  transition: 0.5s;
+}
+
+#overlay .card-creating-container .exit-button:hover {
+  color: white;
+  cursor: pointer;
+}
+
+#overlay .card-creating-container textarea {
+  outline: none;
+  border: 1px solid black;
+  padding: 10px;
 }
 /*# sourceMappingURL=style.css.map */

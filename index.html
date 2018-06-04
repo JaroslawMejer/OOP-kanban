@@ -20,10 +20,19 @@
   	</div>
 
     <div id="overlay" style="display: none;">
-      <div class="col-creating-container">
+      <div class="col-creating-container" style="display: none;">
+        <button class="exit-button">X</button>
         <h1>Enter a column name</h1>
         <input type="text" name="col-name" placeholder="Your new column name...">
         <button class="submit-col-name">Confirm</button>
+      </div>
+      <div class="card-creating-container" style="display: none;">
+        <button class="exit-button">X</button>
+        <h1>Enter a card header</h1>
+        <input type="text" name="card-name" placeholder="Your new card name...">
+        <h1>Enter a description</h1>
+        <textarea cols="50" rows="8"></textarea>
+        <button class="submit-new-card">Confirm</button>
       </div>
     </div>
 
@@ -32,7 +41,7 @@
         <h2 class="column-title"><span>{{ name }}</span></h2>
         <div class="col-button-container">
           <button class="btn-delete"><i class="fas fa-trash-alt"></i></button>
-          <button class="add-card">Add a card</button>
+          <button class="add-card" id="idForAddingCard">Add a card</button>
         </div>
         <ul id={{ id }} class="column-card-list"></ul>
         
@@ -42,7 +51,8 @@
     <script id="card-template" type="x-tmpl-mustache">
       <div class="card">
         <a><i class="fas fa-thumbtack"></i></a>
-        <h3 class="card-description">{{ description }}</h3>
+        <h3 class="card-description">{{ header }}</h3>
+        <p>{{ description }}</p>
         <button class="btn-delete"><i class="fas fa-trash-alt"></i></button>
       </div
     </script>

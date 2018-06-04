@@ -41,10 +41,26 @@ document.addEventListener('DOMContentLoaded', function(){
 			}
 
 			if (event.target.classList.contains('add-card')) {
-			  self.addCard(new Card(prompt("Enter the name of the card")));
+				document.getElementById("overlay").style.display = "block";
+				document.querySelector('#overlay .card-creating-container').style.display = 'block'
+				document.querySelector('#overlay .submit-new-card').addEventListener('click', function(){
+					var nameCardInput = document.querySelector('.card-creating-container input')
+					var descCardInput = document.querySelector('.card-creating-container textarea')
+					var name = nameCardInput.value
+					var desc = descCardInput.value
+					if (!name){
+						alert('Wpisz nazwę!')
+						return
+					}
+					var card = new Card(name, desc)
+					self.addCard(card);
+					document.getElementById("overlay").style.display = "none";
+					document.querySelector('#overlay .col-creating-container').style.display = 'none'
+				});
+				
 			}
-		});
 
+		});	
 		
 	}
 
@@ -57,12 +73,13 @@ document.addEventListener('DOMContentLoaded', function(){
 		}
 	};
 
-	function Card(description) {
+	function Card(header, description) {
 		var self = this;
 
 		this.id = randomString();
+		this.header = header;
 		this.description = description;
-		this.element = generateTemplate('card-template', { description: this.description }, 'li');
+		this.element = generateTemplate('card-template', { header: this.header, description: this.description }, 'li');
 
 		this.element.querySelector('.card').addEventListener('click', function (event) {
 			event.stopPropagation();
@@ -98,7 +115,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	document.querySelector('#board .create-column').addEventListener('click', function(){
 		document.getElementById("overlay").style.display = "block";
+		document.querySelector('#overlay .col-creating-container').style.display = 'block'
 	});
+
 
 	document.querySelector('#overlay .submit-col-name').addEventListener('click', function(){
 		var inputEl = document.querySelector('.col-creating-container input')
@@ -109,6 +128,9 @@ document.addEventListener('DOMContentLoaded', function(){
 		}
 		var column = new Column(name)
 		board.addColumn(column);
+		document.getElementById("overlay").style.display = "none";
+	});
+	document.querySelector('#overlay .exit-button').addEventListener('click', function(){
 		document.getElementById("overlay").style.display = "none";
 	});
 
@@ -124,11 +146,12 @@ document.addEventListener('DOMContentLoaded', function(){
 	board.addColumn(doneColumn);
 
 	// CREATING CARDS
-	var card1 = new Card('New task');
-	var card2 = new Card('Create kanban boards');
+	var card1 = new Card('New task', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae velit cursus, elementum quam id, fringilla nibh. Integer ex nulla, scelerisque ac eros consectetur, dapibus viverra nisl. Sed velit tortor, malesuada non sodales sit amet, tempor eu lorem.');
+	var card2 = new Card('Latest task', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae velit cursus, elementum quam id, fringilla nibh. Integer ex nulla, scelerisque ac eros consectetur, dapibus viverra nisl. Sed velit tortor, malesuada non sodales sit amet, tempor eu lorem.');
 
 	// ADDING CARDS TO COLUMNS
 	todoColumn.addCard(card1);
 	doingColumn.addCard(card2);
 
 });
+
