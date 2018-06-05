@@ -25,6 +25,23 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	// PODSTAWOWE KLASY I OBIEKT TABLICY
 
+	var columnContext;
+
+	document.querySelector('#submitNewCard').addEventListener('click', function(){
+		var nameCardInput = document.querySelector('.card-creating-container input')
+		var descCardInput = document.querySelector('.card-creating-container textarea')
+		var name = nameCardInput.value
+		var desc = descCardInput.value
+		if (!name){
+			alert('Wpisz nazwę!')
+			return
+		}
+		var card = new Card(name, desc)
+		columnContext.addCard(card);
+		document.getElementById("overlay").style.display = "none";
+		document.querySelector('#overlay .card-creating-container').style.display = 'none'
+	});
+
 	function Column(name) {
 		var self = this;
 
@@ -34,20 +51,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
 		//PODPINANIE ZDARZEŃ
 
-		document.querySelector('#submitNewCard').addEventListener('click', function(){
-			var nameCardInput = document.querySelector('.card-creating-container input')
-			var descCardInput = document.querySelector('.card-creating-container textarea')
-			var name = nameCardInput.value
-			var desc = descCardInput.value
-			if (!name){
-				alert('Wpisz nazwę!')
-				return
-			}
-			var card = new Card(name, desc)
-			self.addCard(card);
-			document.getElementById("overlay").style.display = "none";
-			document.querySelector('#overlay .col-creating-container').style.display = 'none'
-		});
 
 		this.element.querySelector('.column').addEventListener('click', function (event) {
 			console.log(event.target)
@@ -56,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			}
 
 			if (event.target.classList.contains('add-card')) {
+				columnContext = self;
 				document.getElementById("overlay").style.display = "block";
 				document.querySelector('#overlay .card-creating-container').style.display = 'block'
 			}
@@ -130,8 +134,13 @@ document.addEventListener('DOMContentLoaded', function(){
 		board.addColumn(column);
 		document.getElementById("overlay").style.display = "none";
 	});
-	document.querySelector('#overlay .exit-button').addEventListener('click', function(){
+	document.querySelector('.exit-button').addEventListener('click', function(){
 		document.getElementById("overlay").style.display = "none";
+		document.getElementByClass('.col-creating-container').style.display = 'none'
+	});
+	document.querySelector('.exit-button2').addEventListener('click', function(){
+		document.getElementById("overlay").style.display = "none";
+		document.querySelector('.card-creating-container').style.display = 'none'
 	});
 
 

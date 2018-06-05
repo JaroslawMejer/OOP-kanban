@@ -294,7 +294,7 @@ body {
   cursor: pointer;
 }
 
-#overlay .card-creating-container .exit-button {
+#overlay .card-creating-container .exit-button2 {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -304,7 +304,7 @@ body {
   transition: 0.5s;
 }
 
-#overlay .card-creating-container .exit-button:hover {
+#overlay .card-creating-container .exit-button2:hover {
   color: white;
   cursor: pointer;
 }
