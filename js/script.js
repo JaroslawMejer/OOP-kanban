@@ -34,6 +34,21 @@ document.addEventListener('DOMContentLoaded', function(){
 
 		//PODPINANIE ZDARZEŃ
 
+		document.querySelector('#submitNewCard').addEventListener('click', function(){
+			var nameCardInput = document.querySelector('.card-creating-container input')
+			var descCardInput = document.querySelector('.card-creating-container textarea')
+			var name = nameCardInput.value
+			var desc = descCardInput.value
+			if (!name){
+				alert('Wpisz nazwę!')
+				return
+			}
+			var card = new Card(name, desc)
+			self.addCard(card);
+			document.getElementById("overlay").style.display = "none";
+			document.querySelector('#overlay .col-creating-container').style.display = 'none'
+		});
+
 		this.element.querySelector('.column').addEventListener('click', function (event) {
 			console.log(event.target)
 			if (event.target.classList.contains('fa-trash-alt')) {
@@ -43,21 +58,6 @@ document.addEventListener('DOMContentLoaded', function(){
 			if (event.target.classList.contains('add-card')) {
 				document.getElementById("overlay").style.display = "block";
 				document.querySelector('#overlay .card-creating-container').style.display = 'block'
-				document.querySelector('#overlay .submit-new-card').addEventListener('click', function(){
-					var nameCardInput = document.querySelector('.card-creating-container input')
-					var descCardInput = document.querySelector('.card-creating-container textarea')
-					var name = nameCardInput.value
-					var desc = descCardInput.value
-					if (!name){
-						alert('Wpisz nazwę!')
-						return
-					}
-					var card = new Card(name, desc)
-					self.addCard(card);
-					document.getElementById("overlay").style.display = "none";
-					document.querySelector('#overlay .col-creating-container').style.display = 'none'
-				});
-				
 			}
 
 		});	
