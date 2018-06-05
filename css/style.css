@@ -3,6 +3,7 @@ body {
   padding: 0;
   background-image: url("https://public.adobecc.com/files/1ENSRQRKBWF5AK0JWQ2UE3RG3MFFFF");
   background-size: 100%;
+  background-attachment: fixed;
   font-family: 'Amatic SC', cursive;
 }
 
@@ -142,6 +143,7 @@ body {
   padding: 10px 0;
   border-bottom: 1px solid black;
   font-weight: bold;
+  background: linear-gradient(#FFAF38, #ffd256);
 }
 
 .board .column-container div .column .column-card-list li .card a {
@@ -313,5 +315,25 @@ body {
   outline: none;
   border: 1px solid black;
   padding: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .board .column-container div {
+    width: 50%;
+  }
+  .board .column-container div .column {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .board .column-container div {
+    width: 100%;
+  }
+  .board .column-container div .column {
+    width: 70%;
+    margin-left: 15%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

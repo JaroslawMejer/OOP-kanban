@@ -3,6 +3,7 @@ body{
 	padding: 0;
 	background-image: url('https://public.adobecc.com/files/1ENSRQRKBWF5AK0JWQ2UE3RG3MFFFF');
 	background-size: 100%;
+	background-attachment: fixed;
 	font-family: 'Amatic SC', cursive;
 }
 
@@ -116,6 +117,7 @@ $primary-color: white;
 								padding: 10px 0;
 								border-bottom: 1px solid black;
 								font-weight: bold;
+								background: linear-gradient(#FFAF38, rgb(255, 210, 86));
 							}
 							a{
 								position: absolute;
@@ -273,5 +275,32 @@ $primary-color: white;
 	    	border: 1px solid black;
 	    	padding: 10px;
 	    }
+	}
+}
+
+@media screen and (max-width: 800px){
+	.board{
+		.column-container{
+			div{
+				width: 50%;
+				.column{
+					width: 80%;
+					margin-left: 10%;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 550px){
+	.board{
+		.column-container{
+			div{
+				width: 100%;
+				.column{
+					width: 70%;
+					margin-left: 15%;
+				}
+			}
+		}
 	}
 }
