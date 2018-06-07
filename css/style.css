@@ -42,7 +42,6 @@ body {
 }
 
 .board .create-column:hover {
-  transform: scale(1.1);
   border: 1px solid black;
   cursor: url(../images/pin.png), pointer;
   color: white;
@@ -81,11 +80,12 @@ body {
   border-radius: 50%;
   transition: 0.5s;
   -webkit-transform-style: preserve-3d;
+  opacity: 0.6;
 }
 
 .board .column-container div .column .col-button-container .btn-delete:hover {
   cursor: pointer;
-  transform: scale(1.1);
+  opacity: 1;
   -webkit-transform-style: preserve-3d;
 }
 

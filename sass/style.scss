@@ -40,7 +40,6 @@ $primary-color: white;
 		border: 1px solid transparent;
 		color: black;
 		&:hover{
-			transform: scale(1.1);
 			border: 1px solid black;
 			cursor: url(../images/pin.png), pointer;
 			color: white;
@@ -66,9 +65,10 @@ $primary-color: white;
 						border-radius: 50%;
 						transition: 0.5s;
 						-webkit-transform-style: preserve-3d;
+						opacity: 0.6;
 						&:hover{
 							cursor: pointer;
-							transform: scale(1.1);
+							opacity: 1;
 							-webkit-transform-style: preserve-3d;
 						}
 					}
